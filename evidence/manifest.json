@@ -1,0 +1,11 @@
+{
+  "schema":"mihm-evidence-manifest-v1",
+  "generated":"2026-09-11",
+  "repository":"Aptymok/Cimps2026-mihm",
+  "objects":{
+    "REM618":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED","relation_to_video":"UNRESOLVED"},"video":{"status":"PUBLIC_URL_DECLARED","url":"https://youtu.be/JTepOraQwGY?si=F_ItDw99hRT7wAhR"}},
+    "111":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED"},"video":{"status":"OBSERVED_IN_PRIOR_RUN_REPROBE_REQUIRED"}},
+    "QUE_NO":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED"},"video":{"status":"MISSING_NOT_OBSERVED"}},
+    "Fluo-N2DL-HeLa":{"dataset":{"status":"EXTERNAL_NOT_REDISTRIBUTED"},"ground_truth":{"status":"WITHHELD_FOR_EVALUATION"}}
+  }
+}
