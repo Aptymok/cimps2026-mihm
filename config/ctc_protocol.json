@@ -1,0 +1,12 @@
+{
+  "dataset":"Fluo-N2DL-HeLa",
+  "sequence":"01",
+  "official_url":"https://data.celltrackingchallenge.net/training-datasets/Fluo-N2DL-HeLa.zip",
+  "construction_layer":"01_ST/SEG",
+  "evaluation_layer":"01_GT/TRA",
+  "gate_rule":"1.75 * p90(nearest-neighbor distance), minimum 3 px",
+  "observed_gate_px":10.8043,
+  "perturbations":{"jitter_sigma_px":[1,3,6],"dropout_fraction":[0.02,0.05,0.1]},
+  "replicates":10,
+  "ground_truth_status":"WITHHELD_FOR_EVALUATION"
+}
