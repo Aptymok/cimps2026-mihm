@@ -1,0 +1,16 @@
+services:
+  mihm-audit:
+    build:
+      context: .
+      dockerfile: Containerfile
+    volumes:
+      - ./evidence:/workspace/evidence
+      - ./outputs:/workspace/outputs
+    command: ["python", "scripts/run_pipeline.py", "--phase", "audit"]
+
+  mihm-api:
+    build:
+      context: .
+      dockerfile: Containerfile
+    ports: ["8080:8080"]
+    command: ["uvicorn", "services.mihm_api.app:app", "--host", "0.0.0.0", "--port", "8080"]
