@@ -1,0 +1,10 @@
+criterion,definition,evidence
+Relevance,Variable answers declared observation question,instrument contract
+Accuracy,Computation matches declared observable,formula+code+test
+Accessibility,Inputs/outputs can be located,README+manifest
+Interpretability,Output has metadata/status,dictionary+epistemic status
+Coherence,No contradiction between variables/tests,tests
+Comparability,Only within declared instrument unless MTC exists,contract
+Traceability,Each measured asset has hash/provenance,ledger
+No silent imputation,Missingness remains typed,epistemic policy
+Reproducibility,Same inputs/config reconstruct outputs,container+CI
