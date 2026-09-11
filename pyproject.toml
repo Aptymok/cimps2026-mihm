@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mihm-cimps2026"
+version = "1.0.0"
+description = "Executable MIHM audit package for CIMPS2026 submission 724450"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
