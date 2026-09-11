@@ -1,0 +1,5 @@
+{
+  "REM618":{"audio":"REFERENCE_REQUIRED","cover":"OBSERVED","video_url":"https://youtu.be/JTepOraQwGY?si=F_ItDw99hRT7wAhR","cover_video_relation":"UNRESOLVED"},
+  "111":{"audio":"REFERENCE_REQUIRED","cover":"OBSERVED","video":"AUTHORIZED_ASSET_OR_PUBLIC_URL","cover_video_relation":"UNRESOLVED_UNTIL_MEASURED"},
+  "QUE_NO":{"audio":"REFERENCE_REQUIRED","cover":"OBSERVED","video":"MISSING_NOT_OBSERVED"}
+}
