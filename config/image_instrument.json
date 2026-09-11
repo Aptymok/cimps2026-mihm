@@ -1,0 +1,8 @@
+{
+  "instrument_id":"MIHM_IMAGE_R1",
+  "max_dimension_px":1024,
+  "features":["entropy_gray","contrast_rms","edge_density_canny","horizontal_symmetry","cielab_chroma"],
+  "canny_thresholds":[100,200],
+  "perturbations":{"blur_sigma":[1,3,6],"gaussian_noise_sigma":[5,15,30],"contrast_alpha":[0.8,0.5,0.2],"central_occlusion_fraction":[0.05,0.15,0.3]},
+  "epistemic_status":"DERIVED"
+}
