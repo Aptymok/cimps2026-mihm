@@ -1,0 +1,34 @@
+{
+  "contract": "MIHM-CIMPS-R1-BOUNDED-ACOUSTIC-1.0",
+  "scale": "0-1",
+  "variables": {
+    "Fs": "mean bounded spectral flux between adjacent L1-normalized magnitude spectra",
+    "Di": "mean spectral flatness (geometric/arithmetic magnitude ratio); operational interference/noise-density proxy",
+    "Cs": "1 - mean normalized spectral entropy; spectral concentration/coherence proxy",
+    "Dcog": "legacy symbol retained for traceability; onset-interval dispersion proxy CV/(1+CV), not a direct measurement of human cognition",
+    "Er": "RMS energy-floor retention p10/p90",
+    "Vi": "RMS-envelope coefficient of variation CV/(1+CV)"
+  },
+  "phi_S": "Phi_S = 1 - weighted mean_j min(|x_j - median_baseline_j|/(k*robust_scale_j),1), equal weights, k=3; robust_scale=max(1.4826*MAD,IQR/1.349,0.01)",
+  "sampling": "first half of non-overlapping 4-s windows per source defines source-specific clean baseline; second half is held out and reused only to generate paired controlled perturbations",
+  "perturbations": {
+    "noise_snr_db": [30, 20, 10],
+    "clipping_peak_ratio": [0.9, 0.6, 0.3],
+    "dropout_fraction": [0.01, 0.05, 0.1]
+  },
+  "baselines": {
+    "IsolationForest": {
+      "n_estimators": 300,
+      "random_state": 724450,
+      "contamination": "auto"
+    },
+    "OneClassSVM": {
+      "kernel": "rbf",
+      "gamma": "scale",
+      "nu": 0.05,
+      "preprocess": "StandardScaler fit only on clean baseline windows"
+    }
+  },
+  "validity_boundary": "This experiment evaluates a bounded acoustic operationalization and controlled perturbation sensitivity. The primary analysis preserves the two signals reported in the submitted manuscript; five additional KXTXR audio objects are a secondary within-corpus robustness check. It does not establish universal MIHM validity, human cognitive measurement, multimodal validity, or general sociotechnical performance.",
+  "legacy_note": "The submitted Phi=0.5000 values are preserved as historical R0 outputs. R1 replaces the legacy near-constant jump-potential estimator with the explicit baseline-proximity Phi_S and regenerates all inferential results."
+}
