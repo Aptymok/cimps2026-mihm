@@ -1,0 +1,8 @@
+variable,observable,source_domain,status,interpretation
+Fs,bounded spectral flux,audio,DERIVED,proxy of acoustic change/friction
+Di,spectral flatness,audio,DERIVED,proxy of noise-likeness/interference
+Cs,1-normalized spectral entropy,audio,DERIVED,spectral concentration
+D_onset,onset interval dispersion,audio,DERIVED,temporal event dispersion
+Er,P10(RMS)/P90(RMS),audio,DERIVED,energy-floor retention
+Vi,CV(RMS)/(1+CV),audio,DERIVED,bounded RMS-envelope variability
+Phi_S,1-weighted normalized distance,instrument,DERIVED,within-instrument proximity to declared reference
