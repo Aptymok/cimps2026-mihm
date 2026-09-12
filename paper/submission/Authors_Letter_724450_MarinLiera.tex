@@ -1,0 +1,22 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[spanish]{babel}\usepackage{geometry}\usepackage{enumitem}\usepackage{hyperref}\geometry{margin=2.4cm}
+\begin{document}
+\begin{center}\Large\textbf{Carta de autores --- Submission 724450}\end{center}
+\noindent Estimado Dr. Jezreel Mejía Miranda y revisores:\\
+Agradecemos los comentarios recibidos. La nueva versión modifica el alcance científico, formaliza el motor MIHM y amplía la evaluación sin presentar los nuevos resultados como validación universal. A continuación se resumen las mejoras principales.
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Alcance y título.} Se sustituyó ``Experimental Validation'' por evaluación experimental multidominio y se limitaron explícitamente las afirmaciones de generalidad.
+\item \textbf{Formalización reproducible.} Se definen los seis observables acústicos, extracción, normalización, referencia robusta, parámetros, distancia y $\Phi_S$. Cada descriptor establecido se distingue de su interpretación MIHM.
+\item \textbf{Resultado $\Phi=0.5000$.} Se reconstruyó el estimador preliminar; los valores exactos 0.50000036 y 0.50001562 se explican como consecuencia de una media de primeras diferencias cercana a cero. Se retira la interpretación de equivalencia de estados.
+\item \textbf{Dataset ampliado.} El experimento acústico utiliza siete objetos y 1,660 observaciones clean/perturbed. Se añade una prueba externa sobre Fluo-N2DL-HeLa con ground truth de tracking mantenido fuera de la construcción.
+\item \textbf{Baselines, estadística y sensibilidad.} Se comparan Isolation Forest y One-Class SVM; se reportan AUC, bootstrap, Wilcoxon/Holm y 900 configuraciones de sensibilidad. MIHM no supera al baseline OCSVM y el texto no afirma superioridad predictiva.
+\item \textbf{Ground truth y definiciones.} Ruido, perturbación, anomalía, estabilidad y missingness se separan operacionalmente. CTC conserva un resultado negativo que falsifica la transferencia ingenua de una regla history-aware.
+\item \textbf{Heterogeneidad.} Imagen y video utilizan instrumentos propios. Se introduce un Multinode Translation Contract (MTC) que prohíbe sustitución aritmética entre dominios y exige identidad/provenance, invariantes, alineación y pérdida declarada.
+\item \textbf{Reproducibilidad.} Se reconstruyó \url{https://github.com/Aptymok/Cimps2026-mihm} como paquete ejecutable con notebook DANE/SEN adaptado, contenedor, CI, pruebas, manifest de evidencia, scripts por dominio y pasos de ejecución. El dataset CTC no se redistribuye: se recupera desde la fuente oficial.
+\item \textbf{Terminología.} ``Cognitive dispersion'' deja de presentarse como medición cognitiva; el observable actual es dispersión temporal de onsets. DevSecOps/AIOps se tratan como antecedentes operacionales, no fundamentos matemáticos.
+\item \textbf{Figuras y estado del arte.} Las figuras se integran y citan en orden; el Ishikawa se utiliza como mapa operacional. Se amplían referencias de observabilidad, detección de anomalías, MIR, procesamiento visual, correspondencia audiovisual y tracking celular.
+\end{enumerate}
+\noindent Atentamente,\\[3mm]
+Juan Antonio Marín Liera\\
+Edgar Oswaldo Díaz
+\end{document}
