@@ -1,0 +1,45 @@
+name: REM618 Public Audiovisual Measurement
+on:
+  push:
+    paths:
+      - '.github/workflows/rem618_public_measure.yml'
+      - 'scripts/measure_audiovisual_public.py'
+      - 'scripts/fetch_video_url.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Resolve public REM618 video
+        run: |
+          python scripts/fetch_video_url.py \
+            --object REM618_PUBLIC \
+            --url 'https://youtu.be/JTepOraQwGY?si=F_ItDw99hRT7wAhR' \
+            --out outputs/rem618_public/source
+      - name: Measure audiovisual stream
+        run: |
+          VIDEO=$(find outputs/rem618_public/source -type f \( -name '*.mp4' -o -name '*.mkv' -o -name '*.webm' -o -name '*.mov' \) | head -1)
+          test -n "$VIDEO"
+          python scripts/measure_audiovisual_public.py \
+            --object REM618_PUBLIC \
+            --video "$VIDEO" \
+            --sample-hz 2 \
+            --outdir outputs/rem618_public/measurement
+          ffmpeg -y -ss 00:00:10 -i "$VIDEO" -frames:v 1 outputs/rem618_public/frame_010.jpg || true
+          ffmpeg -y -ss 00:00:30 -i "$VIDEO" -frames:v 1 outputs/rem618_public/frame_030.jpg || true
+          ffmpeg -y -ss 00:01:00 -i "$VIDEO" -frames:v 1 outputs/rem618_public/frame_060.jpg || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rem618-public-measurement
+          path: outputs/rem618_public
+          retention-days: 7
