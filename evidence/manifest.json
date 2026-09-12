@@ -1,11 +1,51 @@
 {
-  "schema":"mihm-evidence-manifest-v1",
-  "generated":"2026-09-11",
-  "repository":"Aptymok/Cimps2026-mihm",
-  "objects":{
-    "REM618":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED","relation_to_video":"UNRESOLVED"},"video":{"status":"PUBLIC_URL_DECLARED","url":"https://youtu.be/JTepOraQwGY?si=F_ItDw99hRT7wAhR"}},
-    "111":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED"},"video":{"status":"OBSERVED_IN_PRIOR_RUN_REPROBE_REQUIRED"}},
-    "QUE_NO":{"audio":{"status":"REFERENCE_REQUIRED"},"cover":{"status":"OBSERVED"},"video":{"status":"MISSING_NOT_OBSERVED"}},
-    "Fluo-N2DL-HeLa":{"dataset":{"status":"EXTERNAL_NOT_REDISTRIBUTED"},"ground_truth":{"status":"WITHHELD_FOR_EVALUATION"}}
+  "schema": "mihm-evidence-manifest-v2",
+  "generated": "2026-09-11",
+  "submission": {
+    "conference": "CIMPS2026",
+    "submission_id": "724450",
+    "status": "CAMERA_READY_SUBMITTED",
+    "submitted_artifacts": {
+      "Cameraready_724450_MarinLiera.pdf": "d3f98f78170f2fc318e688e23476c51d77ff62f9a53b780103db4983fcbfc6ec",
+      "Cameraready_724450_MarinLiera_HIGHLIGHTS.pdf": "93f5ab926c351bfce7db29b7f62b5f20e4d92805138cc96bfd35c9e910289f0b",
+      "Letter_724450_MarinLiera.pdf": "a4ce57010a4b2489d33983695b08f811603948e68cd0d22d098946d771296493"
+    }
+  },
+  "repository": "Aptymok/cimps2026-mihm",
+  "hub": "https://aptymok.github.io/cimps2026-mihm/",
+  "objects": {
+    "REM618": {
+      "audio": {"status": "OBSERVED"},
+      "cover": {"status": "OBSERVED", "relation_to_public_video": "UNRESOLVED"},
+      "preserved_audiovisual_clip": {
+        "status": "OBSERVED",
+        "audio_to_master": "STRONGLY_SUPPORTED",
+        "score": 0.9886
+      },
+      "public_full_video": {
+        "status": "UNRESOLVED_EXTERNAL_FETCH",
+        "url": "https://youtu.be/JTepOraQwGY?si=F_ItDw99hRT7wAhR",
+        "reason": "neutral GitHub Actions resolver reached YouTube but was rate/bot challenged; no result is imputed"
+      }
+    },
+    "111": {
+      "audio": {"status": "OBSERVED"},
+      "cover": {"status": "OBSERVED"},
+      "full_video": {"status": "OBSERVED", "audio_to_master": "SUPPORTED", "score": 0.8359},
+      "short_clip": {"status": "AMBIGUOUS_SHORT_EXCERPT"}
+    },
+    "QUE_NO": {
+      "audio": {"status": "OBSERVED"},
+      "cover": {"status": "OBSERVED"},
+      "video": {"status": "MISSING_NOT_OBSERVED"}
+    },
+    "Fluo-N2DL-HeLa": {
+      "dataset": {
+        "status": "EXTERNAL_NOT_REDISTRIBUTED",
+        "provider": "MitoCheck Consortium",
+        "provider_reference_doi": "10.1038/nature08869"
+      },
+      "ground_truth": {"status": "WITHHELD_FOR_EVALUATION"}
+    }
   }
 }
