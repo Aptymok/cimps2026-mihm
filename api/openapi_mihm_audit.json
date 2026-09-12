@@ -1,0 +1,24 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MIHM Audit API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "responses": {
+          "200": {"description": "OK"}
+        }
+      }
+    },
+    "/mihm/phi-s": {
+      "post": {
+        "summary": "Compute typed bounded-object state from declared distances",
+        "responses": {
+          "200": {"description": "Derived state"}
+        }
+      }
+    }
+  }
+}
