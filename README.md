@@ -1,21 +1,30 @@
 # MIHM · CIMPS2026
 
-**Multinode Homeostatic Integral Model (MIHM)** — motor operacional, notebook de auditoría, evidencia derivada, Hub de reproducibilidad y manuscrito asociado a CIMPS2026, submission 724450.
+**Multinode Homeostatic Integral Model (MIHM)** — motor operacional, notebook de auditoría, evidencia derivada, Hub público de reproducibilidad y materiales asociados a CIMPS2026, submission **724450**.
+
+**Hub público:** https://aptymok.github.io/cimps2026-mihm/
 
 MIHM se presenta como un marco metodológico de observación centrada en evidencia. No se asume una fórmula física universal entre dominios: cada instrumento declara objeto, pregunta, observables, extractor, referencia, perturbaciones, umbrales, ground truth disponible, estados epistémicos y condiciones de fallo.
 
+## Estado de la entrega
+
+La camera-ready fue enviada a CIMPS2026 con tres archivos separados. Sus SHA-256 se conservan en [`paper/submission/SUBMISSION_FREEZE.md`](paper/submission/SUBMISSION_FREEZE.md) y en [`evidence/manifest.json`](evidence/manifest.json).
+
+El repositorio y el Hub constituyen la superficie de reproducibilidad citada por el manuscrito; no sustituyen los archivos enviados mediante el portal de CIMPS2026.
+
 ## Hub
 
-La superficie académica está en [`hub/index.html`](hub/index.html). Resume:
+[`hub/index.html`](hub/index.html) / [`hub/home.html`](hub/home.html) presentan:
 
 - proceso auditable DANE/SEN adaptado;
 - estado epistémico de cada objeto/modalidad;
 - resultados acústicos, visuales, audiovisuales y CTC;
 - política de thresholds y blank spaces;
 - notebook y evidencia derivada;
-- pasos de reproducción.
+- pasos de reproducción;
+- snapshot de la entrega y referencias de datos.
 
-> El despliegue de GitHub Pages requiere que Pages esté habilitado para este repositorio con **Source: GitHub Actions**. El contenido del Hub ya forma parte del árbol activo aunque Pages no esté habilitado.
+GitHub Pages se despliega automáticamente desde `main` mediante [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
 ## Ejecución rápida
 
@@ -38,9 +47,17 @@ python scripts/fetch_video_url.py \
   --out evidence/raw/kxtxr/video
 ```
 
-## CTC
+El video público completo de REM618 se conserva actualmente como `UNRESOLVED_EXTERNAL_FETCH` porque la ejecución neutral en GitHub Actions fue bloqueada por el mecanismo anti-bot/rate-limit de YouTube. No se sustituye ese estado por una inferencia. La medición `0.9886` reportada para REM618 corresponde al **clip audiovisual preservado** que sí fue observado y comparado contra el master; la relación cover ↔ video público permanece `UNRESOLVED`.
+
+## CTC · Fluo-N2DL-HeLa
 
 `Fluo-N2DL-HeLa` **no se redistribuye** en este repositorio. El script de ingesta recupera el dataset desde la fuente oficial y permite verificar su identidad antes de ejecutar el protocolo. El ground truth permanece separado de la construcción del instrumento.
+
+Crédito del proveedor utilizado en el manuscrito:
+
+- **MitoCheck Consortium**.
+- Neumann et al., *Phenotypic profiling of the human genome by time-lapse microscopy reveals cell division genes*, Nature 464, 721–727 (2010).
+- DOI: https://doi.org/10.1038/nature08869
 
 ```bash
 python scripts/fetch_ctc.py --out evidence/raw/ctc
@@ -67,6 +84,7 @@ La adaptación organiza auditabilidad y reproducibilidad; **no se presenta como 
 - [`evidence/derived/ctc/ctc_perturbation_sensitivity.csv`](evidence/derived/ctc/ctc_perturbation_sensitivity.csv)
 - [`evidence/derived/blank_space_contract.csv`](evidence/derived/blank_space_contract.csv)
 - [`evidence/derived/instrument_threshold_taxonomy.csv`](evidence/derived/instrument_threshold_taxonomy.csv)
+- [`evidence/manifest.json`](evidence/manifest.json)
 
 ## Principios de auditoría
 
@@ -76,3 +94,8 @@ La adaptación organiza auditabilidad y reproducibilidad; **no se presenta como 
 - Los thresholds son específicos del instrumento, salvo demostración independiente de transportabilidad.
 - Un resultado negativo se conserva.
 - Los estados calculados en dominios distintos no se sustituyen ni promedian por igualdad de escala.
+- Una URL pública declarada no equivale a un objeto observado hasta que sus bytes hayan sido resueltos y registrados.
+
+## Snapshot científico
+
+Una rama congelada `cimps2026-724450-camera-ready` se mantiene como referencia reproducible del estado correspondiente a la entrega camera-ready. El desarrollo posterior debe ocurrir fuera de esa referencia congelada.
