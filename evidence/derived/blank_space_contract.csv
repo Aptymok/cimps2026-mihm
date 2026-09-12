@@ -1,0 +1,6 @@
+state,definition,KXTXR_example,rule
+OBSERVED,An asset/measurement was directly available and measured,111 full video audio + frames,May enter the instrument.
+INFERRED,A model-derived relation not directly observed,lagged audiovisual association,Must remain labeled inferred; cannot become observation by wording.
+MISSING_NOT_OBSERVED,Expected/interesting modality has no asset,QUE NO video,"No zero, no synthetic value, no audiovisual Phi/correlation."
+NOT_APPLICABLE,The modality/question does not apply to the object,e.g. video motion for a static-only artifact,Excluded from denominator/interpretation as declared.
+UNRESOLVED,Evidence exists but identity/relation is insufficiently discriminative,111 8-second short clip soundtrack,Preserve as ambiguous; seek longer/stronger evidence.
