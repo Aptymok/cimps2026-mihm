@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite the associated MIHM CIMPS2026 manuscript and this repository."
+title: "MIHM · CIMPS2026 Reproducibility Package"
+type: software
+authors:
+  - family-names: "Marín Liera"
+    given-names: "Juan Antonio"
+  - family-names: "Díaz"
+    given-names: "Edgar Oswaldo"
+repository-code: "https://github.com/Aptymok/cimps2026-mihm"
+url: "https://aptymok.github.io/cimps2026-mihm/"
+version: "CIMPS2026-724450-camera-ready"
+date-released: "2026-09-11"
+keywords:
+  - MIHM
+  - observability
+  - heterogeneous signals
+  - reproducibility
+  - typed state
+  - cross-domain evaluation
