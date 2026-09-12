@@ -1,0 +1,9 @@
+scope,threshold_kind,value_or_rule,meaning
+Audio feature/state,reference scale,source-specific median + robust MAD/IQR,Defines own clean reference; not a universal anomaly cutoff.
+Audio perturbation,severity levels,noise 30/20/10 dB SNR; clipping .90/.60/.30; dropout 1/5/10%,Known interventions used as experimental ground truth.
+Audio detection,performance,ROC AUC,No fixed universal MIHM threshold is claimed.
+Image extraction,algorithm parameter,Canny 100/200,"Feature extraction parameter, not a semantic threshold."
+Image perturbation,severity levels,blur 1/3/6; noise 5/15/30; contrast .8/.5/.2; occlusion 5/15/30%,Known interventions; D_IMG monotonicity is tested.
+CTC association,domain gate,10.8043 pixels,Estimated from detection layer; applies only to that cell-tracking instrument.
+Video soundtrack identity,relation evidence,rank + margin + overlap + provenance,No universal score threshold is calibrated; short 111 excerpt remains ambiguous.
+Cross-domain MTC,relation status,CONFIRMED/SUPPORTED/AMBIGUOUS/NOT_SUPPORTED/MISSING,"Outputs a typed relation status, not averaged Phi."
