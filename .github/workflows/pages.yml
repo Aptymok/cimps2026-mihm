@@ -2,6 +2,9 @@ name: MIHM Reproducibility Hub
 on:
   push:
     branches: [main]
+    paths:
+      - 'hub/**'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,9 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare immutable Hub surface
+        run: |
+          cp hub/home.html hub/index.html
+          printf '%s\n' '' > hub/.nojekyll
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: hub
